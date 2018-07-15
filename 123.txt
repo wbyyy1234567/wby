@@ -1,0 +1,72 @@
+#include <stdafx.h>
+#include <iostream>
+#include <string>
+using namespace std;
+class computer
+{
+   public:
+	 string cpname;
+	 string screen;
+	 string psname;
+	 float usb;
+
+     computer(string cpname, string psname,string screen)
+	 {
+	     this->cpname=cpname;
+		 this->psname=psname;
+         this->screen=screen;
+   
+	 }
+
+	 computer()
+	 {
+	 }
+
+     void on()
+	 {
+           cout<<"Welcome!"<<endl;
+	 }
+
+    /*void off()
+	 {
+           cout<<"See you!"<<endl;
+	 }*/
+};
+
+
+
+
+class pcbook : public computer
+{
+    public:
+		
+	void keyboard()
+	{
+		cout<<"yes"<<endl;
+	}
+	
+};
+int main()
+{
+   computer p1("HP","shenzhou","Host");
+  /* p1.cpname="HP";
+   p1.screen="shenzhou";
+   p1.psname="Host";
+   p1.usb=3.0;*/
+   p1.on();
+   //p1.off();
+   cout<<p1.cpname<<":"<<p1.psname<<":"<<p1.screen<<endl;
+
+   pcbook n1;
+   n1.cpname="HP";
+   n1.psname="Host";
+   char ch;
+   cin>>ch;
+   if(ch=='1')
+   {
+       n1.keyboard();
+   };
+   cout<<n1.cpname<<":"<<n1.psname<<endl;
+   system("pause");
+	return 0;
+}
